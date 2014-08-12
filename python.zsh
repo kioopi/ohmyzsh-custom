@@ -1,6 +1,4 @@
 ## Python
-# Load Pythonbrew
-[[ -s "$HOME/.pythonbrew/etc/bashrc" ]] && source "$HOME/.pythonbrew/etc/bashrc"
 
 # Virtualenv
 # export WORKON_HOME=$HOME/.virtualenvs
@@ -9,3 +7,10 @@
 
 # Define chache for python packages installed by pip
 export PIP_DOWNLOAD_CACHE=$HOME/.pip_download_cache
+
+export PYENV_ROOT="${HOME}/.pyenv"
+
+if [ -d "${PYENV_ROOT}" ]; then
+  export PATH="${PYENV_ROOT}/bin:${PATH}"
+  eval "$(pyenv init -)"
+fi
